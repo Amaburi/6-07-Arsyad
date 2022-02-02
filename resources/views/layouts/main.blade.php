@@ -13,7 +13,6 @@
   <body>
     @include('partials.navbar')
 <div class="container mt-4">
-    <h1>Homeeeeeee</h1>
     @yield('container')
     <!-- Optional JavaScript; choose one of the two! -->
 

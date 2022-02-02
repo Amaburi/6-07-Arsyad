@@ -32,5 +32,8 @@ Route::get('/about', function () {
 Route::get('/gallery', function () {
     return view('gallery',[
         "title" => "Gallery"
-    ]);
+    ]); 
 });
+
+use App\Http\Controllers\ContactController;
+Route::resource('contact',ContactController::class);
