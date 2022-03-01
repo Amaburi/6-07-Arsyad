@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('home',[
+Route::get('/', function () {
+    return view('index',[
         "title" => "Home",
         "nama" => "02",
         "email" => "cryptoniac@gmail.com",
@@ -37,3 +37,10 @@ Route::get('/gallery', function () {
 
 use App\Http\Controllers\ContactController;
 Route::resource('contact',ContactController::class);
+
+use Illuminate\Support\Facades\Auth;
+Auth::routes();
+
+Route::group(['middleware' =>['auth']], function (){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
