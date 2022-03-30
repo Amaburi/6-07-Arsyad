@@ -65,7 +65,7 @@ class ContactController extends Controller
     public function edit($id)
     {
         $contact = Contact::findOrFail($id);
-        return view('admin/contact/edit',compact('contact'));
+        return view('admin/contact/edit', compact('contact'));
 
     }
 
@@ -99,3 +99,4 @@ class ContactController extends Controller
         return redirect()->route('contact.index');
     }
 }
+
